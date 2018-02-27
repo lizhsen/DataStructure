@@ -27,7 +27,9 @@ def anagram_solution(s1, s2):
 
 
 # print(anagram_solution('apple', 'ppalb'))
-
+"""
+找出出现次数最多的数字
+"""
 test = [1, 2, 3, 4, 2, 2, 3, 1, 4, 4, 4, 5]
 print (set(test))
 print max(set(test), key=test.count)

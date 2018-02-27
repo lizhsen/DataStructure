@@ -6,13 +6,13 @@ class Node:
         self.data = initdata
         self.next = None
 
-    def getData(self):
+    def get_data(self):
         return self.data
 
-    def getNext(self):
+    def get_next(self):
         return self.next
 
-    def setNext(self, newnext):
+    def set_next(self, newnext):
         self.next = newnext
 
 
@@ -20,12 +20,12 @@ class UnorderedList:
     def __init__(self):
         self.head = None
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.head == None
 
     def add(self, item):
         tmp = Node(item)
-        tmp.setNext(self.head)
+        tmp.set_next(self.head)
         self.head = tmp
 
     def size(self):
@@ -40,7 +40,7 @@ class UnorderedList:
         current = self.head
         found = False
         while current != None and not found:
-            if current.getData() == item:
+            if current.get_data() == item:
                 found = True
             else:
                 current = current.getNext()

@@ -18,8 +18,9 @@ for i in testlist:
     if i > lar:
         sec = lar
         lar = i
-    if (i < lar) and (i > sec):
+    elif i > sec:
         sec = i
 print lar, sec
+print testlist
 t3 = time.clock()
 print (t3-t2), (t2-t1)
