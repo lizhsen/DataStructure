@@ -4,6 +4,9 @@ from pythonds.basic.queue import Queue
 
 
 class Printer:
+    """
+    模拟打印机打印任务
+    """
     def __init__(self, ppm):
         self.pagerate = ppm
         self.currentTask = None
