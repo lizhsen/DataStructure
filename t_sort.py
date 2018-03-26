@@ -42,9 +42,27 @@ def quick_sort(arr):
     return quick_sort(left) + mid + quick_sort(right)
 
 
+def quickly_sort(arr, left, right):
+    if left >= right:
+        return arr
+    key = arr[left]
+    low = left
+    high = right
+    while left < right:
+        while left < right and arr[right] >= key:
+            right -= 1
+        arr[left] = arr[right]
+        while left < right and arr[left] <= key:
+            left += 1
+        arr[right] = arr[left]
+    arr[left] = key
+    quickly_sort(arr, low, right-1)
+    quickly_sort(arr, right+1, high)
+    return arr
+
+
 def selection_sort(arr):
     count = len(arr)
-    # max_position = 0
     for i in range(count):
         max_position = 0
         for location in range(count - i - 1, 0, -1):
@@ -104,11 +122,11 @@ def merge_sort(arr):
     return arr
 
 
-insert_sort([54, 26, 93, 17, 77, 31, 44, 55, 20])
+print(insert_sort([17, 26, 31, 44, 54, 55, 77, 93, 20]))
 # bubble_sort([9,5,7,3,2,9,8])
 # print(quick_sort(([9,5,7,3,2,9,8])))
-print(selection_sort(([54, 26, 93, 17, 77, 31, 44, 55, 20])))
-print(shell_sort(([54, 26, 93, 17, 77, 31, 44, 55, 20])))
-print(merge_sort(([54, 26, 93, 17, 77, 31, 44, 55, 20])))
-###why
+# print(selection_sort(([54, 26, 93, 17, 77, 31, 44, 55, 20])))
+# print(shell_sort(([54, 26, 93, 17, 77, 31, 44, 55, 20])))
+# print(merge_sort(([54, 26, 93, 17, 77, 31, 44, 55, 20])))
+print(quickly_sort([54, 26, 93, 17, 77, 31, 44, 55, 20], 0, 8))
 
