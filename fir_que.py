@@ -1,10 +1,5 @@
 # coding=utf-8
-
-
 import sys
-
-
-
 
 a = sys.stdin.readline().split()
 n = int(a[0])
